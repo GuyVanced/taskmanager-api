@@ -25,7 +25,7 @@ def get_by_id(id : int,db: Session):
     result = db.scalars(select(taskModel.Task).where(taskModel.Task.task_id == id)).first()
     
     if not result:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User with id {id} not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Task with id {id} not found")
     
     return result
 

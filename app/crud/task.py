@@ -35,8 +35,8 @@ def update_by_id(id : int, task : taskSchema.UpdateTask, db:Session):
 
     result = db.execute(stmt)
 
-    if not result:
-        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= "Task not found")
+    if result.rowcount==0:
+        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= f"Task with id : {id} not found")
     
     db.commit()
 
@@ -47,8 +47,8 @@ def delete_by_id(id:int , db: Session):
 
     result = db.execute(stmt)
 
-    if not result:
-        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= "Task not found")
+    if result.rowcount==0:
+        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= f"Task with id : {id}not found")
     
     db.commit()
 

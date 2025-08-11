@@ -1,0 +1,1 @@
+ A simple Fast API application for Task Manager API with SQLite Database.

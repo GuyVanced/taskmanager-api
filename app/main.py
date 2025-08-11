@@ -9,7 +9,7 @@ app = FastAPI()
 Base.metadata.create_all(engine)
 
 # To include toute to endpoints defined in task router
-app.include_router(task_router.router, prefix="/api")
+app.include_router(task_router.router)
 
 @app.get("/", status_code=200)
 def main():

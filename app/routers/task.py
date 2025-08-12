@@ -3,14 +3,13 @@ from typing import List
 from sqlalchemy.orm import Session
 from sqlalchemy import select, update, delete
 from fastapi import APIRouter, status,Depends
-from ..core.database import get_db
+from ..core import database
 from ..crud import task as task_crud
 from ..schemas import task as task_schema
 
-get_db = get_db
+router = APIRouter(prefix="/tasks", tags= ["TASK_API"])
 
-
-router = APIRouter(prefix="/api/tasks", tags= ["tasks"])
+get_db = database.get_db
 
 @router.get("/", response_model = List[task_schema.TaskResponse],  status_code= status.HTTP_200_OK)
 def view_tasks(db : Session = Depends(get_db)):

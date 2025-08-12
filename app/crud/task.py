@@ -48,7 +48,7 @@ def delete_by_id(id:int , db: Session):
     result = db.execute(stmt)
 
     if result.rowcount==0:
-        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= f"Task with id : {id}not found")
+        return HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail= f"Task with id : {id} not found")
     
     db.commit()
 

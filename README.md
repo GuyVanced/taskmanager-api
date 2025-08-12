@@ -3,7 +3,7 @@
 
 ## 1. Overview
 
-Task Management API is a RESTful API service built using FastAPI and SQLite Database. It includes services for creating, reading, updating and deleting tasks. Users can create tasks with **title**, **description** and **completed** status
+Task Manager API is a RESTful API service built using FastAPI and SQLite Database. It includes services for creating, reading, updating and deleting tasks. Users can create tasks with **title**, **description** and **completed** status
 
 
 ## 2. Implementation
